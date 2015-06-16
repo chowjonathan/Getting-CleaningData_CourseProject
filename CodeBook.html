@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Code Book</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Code Book</h1>
+
+<h3>This code book contains the description of all the variables in the Averages.txt dataset, which has been produced by run_analysis.R</h3>
+
+<h2>Variables</h2>
+
+<p>###The variables contained within the Averages.txt dataset are:  </p>
+
+<h3>(1) Subject: The number assigned to each subject (1 to 30) in the test or train set</h3>
+
+<h3>(2) Activity: The activity being carried out. The activities in the dataset are:</h3>
+
+<p>WALKING<br/>
+WALKING_UPSTAIRS<br/>
+WALKING_DOWNSTAIRS<br/>
+SITTING<br/>
+STANDING<br/>
+LAYING  </p>
+
+<h3>(3) 561 variables with time and frequency domain</h3>
+
+<p>-(all values have been normalized and are bounded within [-1,1])</p>
+
+<p>These signals were used to estimate variables of the feature vector for each pattern:<br/>
+&#39;-XYZ&#39; is used to denote 3-axial signals in the X, Y and Z directions.<br/>
+tBodyAcc-XYZ<br/>
+tGravityAcc-XYZ<br/>
+tBodyAccJerk-XYZ<br/>
+tBodyGyro-XYZ<br/>
+tBodyGyroJerk-XYZ<br/>
+tBodyAccMag<br/>
+tGravityAccMag<br/>
+tBodyAccJerkMag<br/>
+tBodyGyroMag<br/>
+tBodyGyroJerkMag<br/>
+fBodyAcc-XYZ<br/>
+fBodyAccJerk-XYZ<br/>
+fBodyGyro-XYZ<br/>
+fBodyAccMag<br/>
+fBodyAccJerkMag<br/>
+fBodyGyroMag<br/>
+fBodyGyroJerkMag  </p>
+
+<p>The set of variables that were estimated from these signals are:<br/>
+mean(): Mean value<br/>
+std(): Standard deviation<br/>
+mad(): Median absolute deviation<br/>
+max(): Largest value in array<br/>
+min(): Smallest value in array<br/>
+sma(): Signal magnitude area<br/>
+energy(): Energy measure. Sum of the squares divided by the number of values.<br/>
+iqr(): Interquartile range<br/>
+entropy(): Signal entropy<br/>
+arCoeff(): Autorregresion coefficients with Burg order equal to 4<br/>
+correlation(): correlation coefficient between two signals<br/>
+maxInds(): index of the frequency component with largest magnitude<br/>
+meanFreq(): Weighted average of the frequency components to obtain a mean frequency<br/>
+skewness(): skewness of the frequency domain signal<br/>
+kurtosis(): kurtosis of the frequency domain signal<br/>
+bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.<br/>
+angle(): Angle between to vectors.  </p>
+
+<p>Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:<br/>
+gravityMean<br/>
+tBodyAccMean<br/>
+tBodyAccJerkMean<br/>
+tBodyGyroMean<br/>
+tBodyGyroJerkMean  </p>
+
+<p>The complete list of variables of each feature vector is available in &#39;features.txt&#39;</p>
+
+</body>
+
+</html>
